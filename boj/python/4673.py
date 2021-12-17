@@ -9,4 +9,4 @@ for i in x: #1~10001까지
 
 for j in x: #1~10001까지
     if j not in not_self_number:
-        #print(j)
+        print(j)
