@@ -11,7 +11,7 @@ for i in range(list_size): # 수열의 크기만큼
         stack.append(i)
         continue
 
-    # 스택이 비어있거나 해당 인덱스가 높다면 실행
+    # 스택이 비어있지않거나 해당 인덱스가 높다면 실행
     while(stack != [] and int(list[i]) > int(list[stack[-1]]) ): 
         list[stack.pop()] = list[i]
     stack.append(i)
