@@ -24,5 +24,5 @@ while(stack != []):
 for z in range(len(list)):
     list[z] = str(list[z])
 
-print(' '.join(list))
+print(' '.join(list)) 
 
