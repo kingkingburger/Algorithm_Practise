@@ -3,14 +3,17 @@ test_case = int(input())
 def stack_empty(str):
     stack = []
     for j in range(len(str)):
+
         if('(' in str[j]):
             stack.append('(')
             continue
+
         else:
             try:
                 stack.pop()
             except:
                 return "NO"
+                
     if(stack == []):
         return "YES"            
     else:
