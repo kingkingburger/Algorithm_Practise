@@ -18,11 +18,7 @@ for i in range(list_size): # 수열의 크기만큼
 
 #남아있는 스택이 있으면 해당 인덱스를 -1로 변환
 while(stack != []):
-    list[stack.pop()] = -1
-
-#list의 int를 str로 변환
-for z in range(len(list)):
-    list[z] = str(list[z])
+    list[stack.pop()] = "-1"
 
 print(' '.join(list)) 
 
