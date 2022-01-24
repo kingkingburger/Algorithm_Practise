@@ -1,6 +1,6 @@
 N,S = map(int,input().split())
 children = list(map(int,input().split()))
-li = []
+li = [] 
 result = 0
 def 최대공약수(num1, num2):
     #num1이 num2보다 크게
@@ -17,10 +17,10 @@ def 최대공약수(num1, num2):
     return num2
 
 for i in range(N):
-    li.append(abs(children[i] - S))
+    li.append(abs(children[i] - S)) #동생들간의 거리 모음 리스트
 
 result = li[0]
 for j in range(1,len(li)):
     result = 최대공약수(result,li[j])
-    
+
 print(result)
