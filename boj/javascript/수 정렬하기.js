@@ -8,6 +8,7 @@ const input = fs
   .map((num) => +num);
 
 input.shift();
+
 function solution(testcase) {
   testcase = testcase.sort((a, b) => a - b);
   for (let num of testcase) {
