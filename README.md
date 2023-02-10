@@ -1,6 +1,8 @@
 # Algorithm_Practise
+#### 🐢Algorithms🐇
+
 백준 알고리즘 연습
 
-🐢Algorithms🐇
+프로그래머스 알고리즘 연습
 
-git commit -m: [언어] 백준 1000
+leetCode 알고리즘 연습
