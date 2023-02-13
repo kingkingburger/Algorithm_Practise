@@ -5,7 +5,6 @@ var sortedArrayToBST = function(nums) {
     let newNode = new TreeNode(nums[0],null,null), cur = newNode;
     
     const result = insertNode(nums, 0, nums.length-1);
-    console.log(result);
     return result;
 };
 
