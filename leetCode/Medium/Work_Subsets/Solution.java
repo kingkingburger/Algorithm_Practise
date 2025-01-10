@@ -4,29 +4,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Solution {
-  public boolean check(String str1, String str2) {
-    String[] strArr = str2.split("");
-    int checkFlag = 0;
-    for (String s : strArr) {
-      if (str1.contains(s)) {
-        str1 = str1.replaceFirst(s, "");
-        checkFlag++;
-      }
+  // Helper method to calculate frequency of characters in a word
+  private int[] getCharFrequency(String word) {
+    int[] freq = new int[26]; // Assuming only lowercase letters
+    for (char c : word.toCharArray()) {
+      freq[c - 'a']++;
     }
-    return checkFlag == strArr.length;
+    return freq;
   }
 
   public List<String> wordSubsets(String[] words1, String[] words2) {
     List<String> answer = new ArrayList<>();
-    for (String s : words1) {
-      int checkNumber = 0;
-      for (String string : words2) {
-        if (check(s, string)) {
-          checkNumber++;
+    int[] requiredFreq = new int[26];
+
+    // Step 1: Compute the maximum frequency for each character in words2
+    for (String word : words2) {
+      int[] wordFreq = getCharFrequency(word);
+      for (int i = 0; i < 26; i++) {
+        if (wordFreq[i] > requiredFreq[i]) {
+          requiredFreq[i] = wordFreq[i];
         }
       }
-      if (checkNumber == words2.length) {
-        answer.add(s);
+    }
+
+    // Step 2: For each word in words1, check if it satisfies the required frequencies
+    for (String word : words1) {
+      int[] wordFreq = getCharFrequency(word);
+      boolean isUniversal = true;
+      for (int i = 0; i < 26; i++) {
+        if (wordFreq[i] < requiredFreq[i]) {
+          isUniversal = false;
+          break;
+        }
+      }
+      if (isUniversal) {
+        answer.add(word);
       }
     }
 
@@ -37,16 +49,16 @@ class Solution {
     Solution solution = new Solution();
 
     // [facebook, google, leetcode]
-    System.out.println(
-        solution.wordSubsets(
-            new String[] {"amazon", "apple", "facebook", "google", "leetcode"},
-            new String[] {"e", "o"}));
+    //    System.out.println(
+    //        solution.wordSubsets(
+    //            new String[] {"amazon", "apple", "facebook", "google", "leetcode"},
+    //            new String[] {"e", "o"}));
 
     // ["google","leetcode"]
-    System.out.println(
-        solution.wordSubsets(
-            new String[] {"amazon", "apple", "facebook", "google", "leetcode"},
-            new String[] {"lo", "eo"}));
+    //    System.out.println(
+    //        solution.wordSubsets(
+    //            new String[] {"amazon", "apple", "facebook", "google", "leetcode"},
+    //            new String[] {"lo", "eo"}));
 
     // ["facebook","google"]
     System.out.println(
