@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/reference/Algorithm_Practise/leetCode/Medium",
-      "program": "d:/reference/Algorithm_Practise/leetCode/Medium/build/Debug/outDebug",
+      "cwd": "d:/reference/Algorithm_Practise/leetCode/Medium/Minumum_Number_of_Operations_to_move_all_balls_to_each_box",
+      "program": "d:/reference/Algorithm_Practise/leetCode/Medium/Minumum_Number_of_Operations_to_move_all_balls_to_each_box/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
